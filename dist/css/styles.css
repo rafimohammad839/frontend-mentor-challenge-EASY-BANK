@@ -55,6 +55,8 @@ body {
   color: hsl(233, 8%, 62%);
   font-weight: 300;
   font-family: "Public Sans", sans-serif;
+  min-height: 300vh;
+  overflow-x: hidden;
 }
 @media (min-width: 64em) {
   body {
@@ -67,6 +69,41 @@ body.noscroll {
 
 h1, h2, h3 {
   margin-top: 0;
+  font-weight: 300;
+  color: hsl(233, 26%, 24%);
+  line-height: 1.15;
+}
+
+h1 {
+  font-size: 2.31rem;
+  margin-bottom: 1.5rem;
+}
+@media (min-width: 64em) {
+  h1 {
+    font-size: 3.25rem;
+  }
+}
+
+h2 {
+  font-size: 1.875rem;
+  margin-bottom: 1.5625rem;
+}
+@media (min-width: 64em) {
+  h2 {
+    font-size: 2.25rem;
+    margin-bottom: 2.25rem;
+  }
+}
+
+p {
+  line-height: 1.5;
+  font-size: 0.875rem;
+  margin-bottom: 2.25rem;
+}
+@media (min-width: 64em) {
+  p {
+    font-size: 1.125rem;
+  }
 }
 
 a, a:visited, a:hover {
@@ -92,14 +129,26 @@ a, a:visited, a:hover {
   margin: 0 auto;
 }
 .container--pall {
-  padding-top: 2.25rem;
-  padding-bottom: 2.25rem;
+  padding-top: 4.375rem;
+  padding-bottom: 4.375rem;
   padding-right: 1.5rem;
   padding-left: 1.5rem;
 }
+@media (min-width: 64em) {
+  .container--pall {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
 .container--py {
-  padding-top: 2.25rem;
+  padding-top: 4.375rem;
   padding-bottom: 2.25rem;
+}
+@media (min-width: 64em) {
+  .container--py {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
 }
 .container--px {
   padding-right: 1.5rem;
@@ -112,7 +161,13 @@ a, a:visited, a:hover {
   padding-right: 1.5rem;
 }
 .container--pb {
-  padding-bottom: 2.25rem;
+  padding-bottom: 4.375rem;
+}
+@media (min-width: 64em) {
+  .container--pb {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
 }
 .container--pl {
   padding-left: 1.5rem;
@@ -318,25 +373,65 @@ button:hover, .button:hover {
     text-align: left;
   }
 }
-.hero__text h1 {
+
+.feature {
+  background-color: hsl(220, 16%, 96%);
+  text-align: center;
+}
+@media (min-width: 40em) {
+  .feature {
+    text-align: left;
+  }
+}
+.feature__intro {
+  margin-bottom: 3.75rem;
+}
+@media (min-width: 64em) {
+  .feature__intro {
+    width: 60%;
+  }
+}
+@media (min-width: 40em) {
+  .feature__grid {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+.feature__item {
+  padding: 0.9375rem;
+}
+@media (min-width: 40em) {
+  .feature__item {
+    flex: 1 0 50%;
+  }
+}
+@media (min-width: 64em) {
+  .feature__item {
+    flex: 1;
+  }
+}
+.feature__icon {
+  margin-bottom: 1.875rem;
+}
+@media (min-width: 64em) {
+  .feature__icon {
+    margin-bottom: 2.75rem;
+  }
+}
+.feature__title {
   font-weight: 300;
-  font-size: 2.31rem;
   color: hsl(233, 26%, 24%);
   line-height: 1.15;
-  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
 }
 @media (min-width: 64em) {
-  .hero__text h1 {
-    font-size: 3.25rem;
+  .feature__title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
   }
 }
-.hero__text p {
-  line-height: 1.5;
+.feature__description {
   font-size: 0.875rem;
-  margin-bottom: 2.25rem;
-}
-@media (min-width: 64em) {
-  .hero__text p {
-    font-size: 1.125rem;
-  }
+  line-height: 1.5;
 }/*# sourceMappingURL=styles.css.map */
