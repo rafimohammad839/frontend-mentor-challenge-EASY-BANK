@@ -174,9 +174,10 @@ a, a:visited, a:hover {
 }
 
 button, .button {
+  position: relative;
   padding: 0.875rem 2rem;
   border-radius: 1.5rem;
-  background: linear-gradient(to right, hsl(136, 65%, 51%), hsl(192, 70%, 51%));
+  background-image: linear-gradient(to right, hsl(136, 65%, 51%), hsl(192, 70%, 51%));
   outline: 0;
   border: 0;
   color: hsl(0, 0%, 100%);
@@ -187,10 +188,25 @@ button, .button {
   font-weight: 400;
   color: hsl(0, 0%, 100%);
   transition: opacity 300ms ease-in-out;
+  overflow: hidden;
+}
+button::before, .button::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.25);
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
 }
 button:hover, .button:hover {
-  opacity: 0.75;
   color: hsl(0, 0%, 100%);
+}
+button:hover::before, .button:hover::before {
+  opacity: 1;
 }
 
 @media (max-width: 63.9375em) {
@@ -544,6 +560,12 @@ button:hover, .button:hover {
   display: inline-block;
   height: 1.25rem;
 }
+.footer__social a svg path {
+  transition: all 150ms ease-in-out;
+}
+.footer__social a:hover svg path {
+  fill: hsl(136, 65%, 51%);
+}
 .footer__social a:not(:last-child) {
   margin-right: 1rem;
 }
@@ -576,6 +598,10 @@ button:hover, .button:hover {
 }
 .footer__links a {
   line-height: 2.25;
+  transition: color 150ms ease-in-out;
+}
+.footer__links a:hover {
+  color: hsl(136, 65%, 51%);
 }
 @media (min-width: 64em) {
   .footer__cta {

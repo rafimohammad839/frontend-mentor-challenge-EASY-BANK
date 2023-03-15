@@ -137,9 +137,10 @@ a, a:visited, a:hover {
 
 // Button styles
 button, .button {
+  position: relative;
   padding: 0.875rem 2rem;
   border-radius: 1.5rem;
-  background: linear-gradient(to right, $limeGreen, $brightCyan);
+  background-image: linear-gradient(to right, $limeGreen, $brightCyan);
   outline: 0;
   border: 0;
   color: $white;
@@ -150,10 +151,28 @@ button, .button {
   font-weight: 400;
   color: $white;
   transition: opacity 300ms ease-in-out;
-    &:hover {
-      opacity: 0.75;
-      color: $white;
-    }
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.25);
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+  }
+
+  &:hover {
+    color: $white;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
 }
 
 // Visibiliy
